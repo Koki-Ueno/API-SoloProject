@@ -1,0 +1,24 @@
+<%- include('../../partials/header'); %>
+      <h2>Menu</h2>
+      <table cellspacing="0">
+        <thead>
+          <th scope="col">ID</th>
+          <th scope="col">Neta</th>
+          <th scope="col">Price</th>
+          <th></th>
+          <th></th>
+        </thead>
+        <tbody>
+          <% menu.forEach(function (menu) { %>
+            <tr>
+              <td><%= menu.id %></td>
+              <td><%= menu.neta %></td>
+              <td><%= menu.price %></td>
+              <td><a href="/menu/edit/<%= menu.id %>">Edit</a></td>
+              <td><a href="/menu/view/<%= menu.id %>">View</a></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <a href="/menu/new">Add New Menu</a>
+<%- include('../../partials/footer'); %>
